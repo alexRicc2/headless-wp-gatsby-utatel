@@ -28,17 +28,9 @@ module.exports = {
         // the only required plugin option for WordPress is the GraphQL url.
         url:
           process.env.WPGRAPHQL_URL ||
-          `http://gatsby-course-wordpress-udemy.local/graphql`,
-        includedRoutes: [
-          "**/*/*/categories",
-          "**/*/*/posts",
-          "**/*/*/pages",
-          "**/*/*/media",
-          "**/*/*/tags",
-          "**/*/*/taxonomies",
-          "**/*/*/users",
-          "**/*/*/menus",
-        ],
+          `https://interesting-mulch.localsite.io/graphql`,
+        //the list of custom fields to expose to Graphql
+        customFields: ["readingTime"],
       },
     },
 

@@ -33,8 +33,8 @@ module.exports = {
         customFields: ["readingTime"],
         auth: {
           htaccess: {
-            username: health,
-            password: scrawny,
+            username: 'health',
+            password: 'scrawny',
           }
         },
       },

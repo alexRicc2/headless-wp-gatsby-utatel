@@ -31,6 +31,12 @@ module.exports = {
           `https://interesting-mulch.localsite.io/graphql`,
         //the list of custom fields to expose to Graphql
         customFields: ["readingTime"],
+        auth: {
+          htaccess: {
+            username: health,
+            password: scrawny,
+          }
+        },
       },
     },
 

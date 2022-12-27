@@ -157,7 +157,7 @@ async function createBlogPostArchive({ posts, gatsbyUtilities }) {
           offset: index * postsPerPage,
 
           // We need to tell the template how many posts to display too
-          postsPerPage,
+          postsPerPage: postsPerPage,
 
           nextPagePath: getPagePath(pageNumber + 1),
           previousPagePath: getPagePath(pageNumber - 1),

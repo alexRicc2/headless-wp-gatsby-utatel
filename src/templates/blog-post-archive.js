@@ -5,6 +5,7 @@ import parse from "html-react-parser"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import PostCarrousel from "../components/PostCarrousel"
 
 const BlogIndex = ({
   data,
@@ -30,7 +31,7 @@ const BlogIndex = ({
       <Seo title="All posts" />
 
       <Bio />
-
+      <PostCarrousel/>
       <ol style={{ listStyle: `none` }}>
         {posts.map(post => {
           const title = post.title

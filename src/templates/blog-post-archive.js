@@ -31,7 +31,7 @@ const BlogIndex = ({
       <Seo title="All posts" />
 
       <Bio />
-      <PostCarrousel/>
+      <PostCarrousel posts={posts}/>
       <ol style={{ listStyle: `none` }}>
         {posts.map(post => {
           const title = post.title
@@ -72,7 +72,7 @@ const BlogIndex = ({
 export default BlogIndex
 
 export const pageQuery = graphql`
-  query WordPressPostArchive($offset: Int!, $postsPerPage: Int!) {
+  query WordPressPostArchive($offset: Int, $postsPerPage: Int) {
     allWpPost(
       sort: { fields: [date], order: DESC }
       limit: $postsPerPage
@@ -80,10 +80,27 @@ export const pageQuery = graphql`
     ) {
       nodes {
         excerpt
-        uri
-        date(formatString: "MMMM DD, YYYY")
-        title
-        excerpt
+          uri
+          featuredImage {
+            node {
+              altText
+              sourceUrl
+              localFile {
+                childImageSharp {
+                  gatsbyImageData(
+                    quality: 100
+                    placeholder: TRACED_SVG
+                    layout: FULL_WIDTH
+                  )
+                }
+              }
+            }
+          }
+
+          date(formatString: "MMMM DD, YYYY")
+          title
+          excerpt
+          id
       }
     }
   }

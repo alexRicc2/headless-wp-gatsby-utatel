@@ -1,0 +1,90 @@
+.titleContainer {
+  padding-right: 80px;
+  &__title {
+    margin-bottom: 24px;
+    position: relative;
+    overflow: hidden;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      height: 1px;
+      background-color: #f0f0f0;
+      margin-left: 20px;
+    }
+  }
+}
+.postsGrid {
+  display: grid;
+  
+  gap: 30px;
+  grid-template-rows: 280px 280px;
+  grid-template-columns: 1fr 1fr 1fr;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  @media (max-width: 1000px){
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(6, 580px);
+  }
+  .post {
+    padding: 5px;
+    border-radius: 8px;
+    position: relative;
+    max-width: 100%;
+
+    &:hover .postShadow {
+      opacity: 1;
+    }
+    .postShadow {
+      background: linear-gradient(
+        to bottom,
+        rgba(50, 50, 50, 0) 0%,
+        rgba(16, 15, 15, 0.91) 89%,
+        rgba(16, 15, 15, 0.93) 93%
+      );
+      border-radius: 8px;
+      transition: opacity 0.3s ease-in-out;
+      opacity: 0.9;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      bottom: 0;
+      left: 0;
+    }
+    .postInformationContainer{
+      position: absolute;
+      left: 28px;
+      bottom: 28px;
+      right: 28px;
+      
+      a{
+        text-decoration: none;
+      }
+      .category{
+        color: #d79c6a;
+        font-size: 11px;
+        text-decoration: none;
+        text-shadow: 0px 2px 2px rgb(0 0 0 / 50%);
+        text-transform: uppercase;
+      }
+      .title{
+        color: #fff;
+        font-size: 18px;
+        margin-top: 5px;
+        margin-bottom: 20px;
+      }
+      .postMetadata{
+        color: #fff;
+        .authorDate{
+          margin-right: 10px;
+          padding-right: 10px;
+          color: #fff;
+        }
+      }
+    }
+  }
+
+ 
+}

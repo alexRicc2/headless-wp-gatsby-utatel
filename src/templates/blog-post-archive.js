@@ -6,6 +6,7 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import PostCarrousel from "../components/PostCarrousel"
+import PostsGrid from "../components/PostsGrid"
 
 const BlogIndex = ({
   data,
@@ -31,7 +32,8 @@ const BlogIndex = ({
       <Seo title="All posts" />
 
       <Bio />
-      <PostCarrousel posts={posts}/>
+      <PostCarrousel posts={posts} />
+      <PostsGrid posts={posts} />
       <ol style={{ listStyle: `none` }}>
         {posts.map(post => {
           const title = post.title
@@ -80,27 +82,38 @@ export const pageQuery = graphql`
     ) {
       nodes {
         excerpt
-          uri
-          featuredImage {
-            node {
-              altText
-              sourceUrl
-              localFile {
-                childImageSharp {
-                  gatsbyImageData(
-                    quality: 100
-                    placeholder: TRACED_SVG
-                    layout: FULL_WIDTH
-                  )
-                }
+        uri
+        author {
+          node {
+            firstName
+          }
+        }
+        categories {
+          nodes {
+            name
+          }
+        }
+        commentCount
+        featuredImage {
+          node {
+            altText
+            sourceUrl
+            localFile {
+              childImageSharp {
+                gatsbyImageData(
+                  quality: 100
+                  placeholder: TRACED_SVG
+                  layout: FULL_WIDTH
+                )
               }
             }
           }
+        }
 
-          date(formatString: "MMMM DD, YYYY")
-          title
-          excerpt
-          id
+        date(formatString: "MMMM DD, YYYY")
+        title
+        excerpt
+        id
       }
     }
   }

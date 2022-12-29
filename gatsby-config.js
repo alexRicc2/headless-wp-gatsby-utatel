@@ -13,6 +13,7 @@ module.exports = {
    * Gatsby has a rich ecosystem of plugins.
    * If you need any more you can search here: https://www.gatsbyjs.com/plugins/
    */
+  
   plugins: [
     {
       /**

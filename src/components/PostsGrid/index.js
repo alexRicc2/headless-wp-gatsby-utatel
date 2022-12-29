@@ -1,7 +1,7 @@
 import { Link } from "gatsby"
 import React from "react"
 import Container from "../ui/Container"
-import styles from "./styles.module.scss"
+import * as styles from "./styles.module.scss"
 const PostsGrid = ({ posts }) => {
   console.log('posts:',posts)
   const postsToDisplay = posts.slice(0,6);

@@ -1,8 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import parse from "html-react-parser"
-
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import PostCarrousel from "../components/PostCarrousel"
@@ -18,7 +16,7 @@ const BlogIndex = ({
     return (
       <Layout isHomePage>
         <Seo title="All posts" />
-        <Bio />
+        
         <p>
           No blog posts found. Add posts to your WordPress site and they'll
           appear here!
@@ -31,7 +29,6 @@ const BlogIndex = ({
     <Layout isHomePage>
       <Seo title="All posts" />
 
-      <Bio />
       <PostCarrousel posts={posts} />
       <PostsGrid posts={posts} />
       <ol style={{ listStyle: `none` }}>

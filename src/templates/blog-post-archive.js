@@ -29,7 +29,7 @@ const BlogIndex = ({
     <Layout isHomePage>
       <Seo title="All posts" />
 
-      {/* <PostCarrousel posts={posts} /> */}
+      <PostCarrousel posts={posts} />
       <PostsGrid posts={posts} />
       <ol style={{ listStyle: `none` }}>
         {posts.map(post => {

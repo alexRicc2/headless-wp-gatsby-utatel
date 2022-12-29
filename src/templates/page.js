@@ -3,7 +3,7 @@ import Layout from '../components/layout'
 const Page = ({pageContext}) => {
     return(
         <Layout>
-            <div dangerouslySetInnerHTML={{__html: pageContext.content}}/>
+            <h2>{pageContext.title}</h2>
         </Layout>
     )
 }

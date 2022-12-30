@@ -5,6 +5,7 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import PostCarrousel from "../components/PostCarrousel"
 import PostsGrid from "../components/PostsGrid"
+import PostSection from "../components/PostsSection"
 
 const BlogIndex = ({
   data,
@@ -31,6 +32,7 @@ const BlogIndex = ({
 
       <PostCarrousel posts={posts} />
       <PostsGrid posts={posts} />
+      <PostSection posts={posts}/>
       <ol style={{ listStyle: `none` }}>
         {posts.map(post => {
           const title = post.title
